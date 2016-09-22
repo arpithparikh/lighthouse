@@ -40,6 +40,7 @@ class Formatter {
   static _getFormatters() {
     this._formatters = {
       accessibility: require('./accessibility'),
+      dobetterweb: require('./dobetterweb-formatter'),
       criticalRequestChains: require('./critical-request-chains'),
       estimatedInputLatency: require('./estimated-input-latency'),
       null: require('./null-formatter'),
