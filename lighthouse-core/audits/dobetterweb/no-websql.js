@@ -58,7 +58,7 @@ class NoWebSQLAudit extends Audit {
         `db name: ${db.database.name}, version: ${db.database.version}` : '');
 
     const extendedInfo = {
-      help: "Web SQL Database is <a href='https://dev.w3.org/html5/webdatabase/' target='_blank'>deprecated</a>. Consider implementing an offline solution using <a href='https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB' target='blank'>IndexedDB</a>."
+      help: 'Web SQL Database is <a href="https://dev.w3.org/html5/webdatabase/" target="_blank">deprecated</a>. Consider implementing an offline solution using <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB" target="_blank">IndexedDB</a>.'
     };
 
     return NoWebSQLAudit.generateAuditResult({

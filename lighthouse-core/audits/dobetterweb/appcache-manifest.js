@@ -51,7 +51,7 @@ class AppCacheManifestAttr extends Audit {
     const displayValue = usingAppcache ? `<html manifest="${artifacts.AppCacheManifest}">` : '';
 
     const extendedInfo = {
-      help: "Application Cache has been <a href='https://html.spec.whatwg.org/multipage/browsers.html#offline' target='_blank'>deprecated</a> by <a href='https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers' target='_blank'>Service Workers</a>. Consider implementing an offline solution using the <a href='https://developer.mozilla.org/en-US/docs/Web/API/Cache' target='blank'>Cache Storage API</a>."
+      help: 'Application Cache has been <a href="https://html.spec.whatwg.org/multipage/browsers.html#offline" target="_blank">deprecated</a> by <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers" target="_blank">Service Workers</a>. Consider implementing an offline solution using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache" target="_blank">Cache Storage API</a>.'
     };
 
     return AppCacheManifestAttr.generateAuditResult({
