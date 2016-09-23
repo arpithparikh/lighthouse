@@ -1,16 +1,18 @@
 {
   "passes": [{
-    "network": false,
+    "network": true,
     "loadPage": true,
     "gatherers": [
       "../gather/gatherers/dobetterweb/appcache",
-      "../gather/gatherers/dobetterweb/websql"
+      "../gather/gatherers/dobetterweb/websql",
+      "../gather/gatherers/http2-resources"
     ]
   }],
 
   "audits": [
     "../audits/dobetterweb/appcache-manifest",
-    "../audits/dobetterweb/no-websql"
+    "../audits/dobetterweb/no-websql",
+    "../audits/dobetterweb/uses-http2"
   ],
 
   "aggregations": [{
@@ -28,6 +30,14 @@
         "no-websql": {
           "rawValue": false,
           "description": "WebSQL DB is <a href='https://dev.w3.org/html5/webdatabase/' target='_blank'>deprecated</a>. Consider implementing an offline solution using <a href='https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB' target='blank'>IndexedDB</a>."
+        }
+      }
+    }, {
+      "name": "Performance",
+      "criteria": {
+        "uses-http2": {
+          "rawValue": false,
+          "description": "Resources made by this application should be severed over HTTP/2 for improved performance."
         }
       }
     }]
