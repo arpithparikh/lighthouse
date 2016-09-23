@@ -1,11 +1,40 @@
 <style>
-  .dbw-measures {
-    font-size: 14px
+  .dbw-help {
+    font-size: 14px;
+    color: #999;
+  }
+  .report-section__title {
+    font-weight: 600;
+  }
+  .report-section__subtitle {
+    margin: 24px 0 16px 0;
+  }
+  .report-section__item-category {
+    display: none;
+  }
+  .report-section__item-extended-info {
+    padding: 8px 0px 16px 24px;
+    max-width: 94%;
+  }
+  .report-section__item-raw-value {
+    font-family: monospace;
+  }
+  .report-section__item-value {
+    width: 18px;
+    overflow: hidden;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .report-section__item-value--good::before {
+    content: '\2713';
+  }
+  .report-section__item-value--poor::before {
+    content: '\2715';
   }
 </style>
 
 <div>
-  <div class="dbw-measures">
+  <div class="dbw-help">
     <div>{{{this.help}}}</div>
   </div>
 </div>
