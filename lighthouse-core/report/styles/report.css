@@ -370,7 +370,14 @@ a {
   color: #555;
   font-style: italic;
   padding: 8px 0px 16px 24px;
-  max-width: 94%;
+  max-width: 90%;
+}
+.report-section__item-helptext {
+  font-size: 14px;
+  color: #999;
+  font-style: italic;
+  padding: 8px 0px 16px 24px;
+  max-width: 90%;
 }
 
 .report-section__item-raw-value {

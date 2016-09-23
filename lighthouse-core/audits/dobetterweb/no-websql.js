@@ -23,7 +23,6 @@
 'use strict';
 
 const Audit = require('../audit');
-const Formatter = require('../../formatters/formatter');
 
 class NoWebSQLAudit extends Audit {
 
@@ -35,6 +34,7 @@ class NoWebSQLAudit extends Audit {
       category: 'Offline',
       name: 'no-websql',
       description: 'Site is not using WebSQL DB.',
+      helpText: 'Web SQL Database is <a href="https://dev.w3.org/html5/webdatabase/" target="_blank">deprecated</a>. Consider implementing an offline solution using <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB" target="_blank">IndexedDB</a>.',
       requiredArtifacts: ['WebSQL']
     };
   }
@@ -57,17 +57,9 @@ class NoWebSQLAudit extends Audit {
     const displayValue = (db && db.database ?
         `db name: ${db.database.name}, version: ${db.database.version}` : '');
 
-    const extendedInfo = {
-      help: 'Web SQL Database is <a href="https://dev.w3.org/html5/webdatabase/" target="_blank">deprecated</a>. Consider implementing an offline solution using <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB" target="_blank">IndexedDB</a>.'
-    };
-
     return NoWebSQLAudit.generateAuditResult({
       rawValue: !db,
-      displayValue: displayValue,
-      extendedInfo: {
-        formatter: Formatter.SUPPORTED_FORMATS.DOBETTERWEB,
-        value: extendedInfo
-      }
+      displayValue: displayValue
     });
   }
 }
